@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.t1</groupId>
     <artifactId>yaml-message-body-reader-writer-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <name>yaml-message-body-reader-writer</name>
+    <description>JAX-RS `MessageBodyReader` and `MessageBodyWriter` for `application/yaml`</description>
+    <url>https://github.com/t1/yaml-message-body-reader-writer</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -27,19 +29,110 @@
         <jersey.version>3.1.11</jersey.version>
         <smallrye-config.version>3.13.4</smallrye-config.version>
         <logback.version>1.5.18</logback.version>
-
-        <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
-        <war-plugin.version>3.4.0</war-plugin.version>
-        <failsafe-plugin.version>3.5.3</failsafe-plugin.version>
-        <wildfly-maven-plugin.version>5.1.4.Final</wildfly-maven-plugin.version>
     </properties>
 
-    <build>
-        <defaultGoal>install</defaultGoal>
-    </build>
+    <scm>
+        <developerConnection>scm:git:https://github.com/t1/yaml-message-body-reader-writer.git</developerConnection>
+        <url>https://github.com/t1/yaml-message-body-reader-writer.git</url>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    <developers>
+        <developer>
+            <id>t1</id>
+            <name>Rüdiger zu Dohna</name>
+        </developer>
+    </developers>
 
     <modules>
         <module>impl</module>
         <module>test</module>
     </modules>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doclint>-missing</doclint>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <!-- always run source+javadoc => see problems early & source available in local repo -->
+                    <plugin>
+                        <!-- but don't run gpg everywhere, esp. not in github actions -->
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

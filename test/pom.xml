@@ -89,7 +89,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>${war-plugin.version}</version>
+                <version>3.4.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
@@ -97,7 +97,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${failsafe-plugin.version}</version>
+                <version>3.5.3</version>
                 <executions>
                     <execution>
                         <goals>
@@ -110,7 +110,7 @@
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
-                <version>${wildfly-maven-plugin.version}</version>
+                <version>5.1.4.Final</version>
                 <configuration>
                     <discover-provisioning-info>
                         <suggest>true</suggest>
