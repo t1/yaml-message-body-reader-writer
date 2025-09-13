@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.t1</groupId>
+    <artifactId>yaml-message-body-reader-writer-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <lombok.version>1.18.40</lombok.version>
+        <jax-rs.version>4.0.0</jax-rs.version>
+        <snakeyaml.version>2.5</snakeyaml.version>
+        <junit.version>5.13.4</junit.version>
+        <assertj.version>3.27.4</assertj.version>
+        <resteasy.version>6.2.12.Final</resteasy.version>
+        <jax-rs-logging.version>2.4.1</jax-rs-logging.version>
+        <jakarta-ee.version>11.0.0</jakarta-ee.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <yasson.version>3.0.4</yasson.version>
+        <jersey.version>3.1.11</jersey.version>
+        <smallrye-config.version>3.13.4</smallrye-config.version>
+        <logback.version>1.5.18</logback.version>
+
+        <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
+        <war-plugin.version>3.4.0</war-plugin.version>
+        <failsafe-plugin.version>3.5.3</failsafe-plugin.version>
+        <wildfly-maven-plugin.version>5.1.4.Final</wildfly-maven-plugin.version>
+    </properties>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+    </build>
+
+    <modules>
+        <module>impl</module>
+        <module>test</module>
+    </modules>
+</project>

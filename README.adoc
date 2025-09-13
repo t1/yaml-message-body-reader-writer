@@ -1,0 +1,5 @@
+= JAX-RS MessageBodyReader/Writer for YAML
+
+This project provides a JAX-RS `MessageBodyReader` and `MessageBodyWriter` for `application/yaml`.
+
+Under the hood, it uses the venerable https://bitbucket.org/snakeyaml/snakeyaml[SnakeYAML] (for now).
