@@ -8,10 +8,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <name>yaml-message-body-reader-writer</name>
-    <description>JAX-RS `MessageBodyReader` and `MessageBodyWriter` for `application/yaml`</description>
-    <url>https://github.com/t1/yaml-message-body-reader-writer</url>
-
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -33,25 +29,6 @@
         <logback.version>1.5.18</logback.version>
         <jboss-logging.version>3.6.1.Final</jboss-logging.version>
     </properties>
-
-    <scm>
-        <developerConnection>scm:git:https://github.com/t1/yaml-message-body-reader-writer.git</developerConnection>
-        <url>https://github.com/t1/yaml-message-body-reader-writer.git</url>
-        <tag>HEAD</tag>
-    </scm>
-    <developers>
-        <developer>
-            <id>t1</id>
-            <name>Rüdiger zu Dohna</name>
-        </developer>
-    </developers>
-    <licenses>
-        <license>
-            <name>Apache License 2.0</name>
-            <url>https://choosealicense.com/licenses/apache-2.0/</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <modules>
         <module>impl</module>
