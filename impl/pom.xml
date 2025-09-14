@@ -16,25 +16,6 @@
     <description>JAX-RS `MessageBodyReader` and `MessageBodyWriter` for `application/yaml`</description>
     <url>https://github.com/t1/yaml-message-body-reader-writer</url>
 
-    <scm>
-        <developerConnection>scm:git:https://github.com/t1/yaml-message-body-reader-writer.git</developerConnection>
-        <url>https://github.com/t1/yaml-message-body-reader-writer.git</url>
-        <tag>HEAD</tag>
-    </scm>
-    <licenses>
-        <license>
-            <name>Apache License 2.0</name>
-            <url>https://choosealicense.com/licenses/apache-2.0/</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <developers>
-        <developer>
-            <id>t1</id>
-            <name>Rüdiger zu Dohna</name>
-        </developer>
-    </developers>
-
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -139,10 +120,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.central</groupId>
-                <artifactId>central-publishing-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
