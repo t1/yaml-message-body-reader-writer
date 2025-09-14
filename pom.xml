@@ -23,13 +23,14 @@
         <junit.version>5.13.4</junit.version>
         <assertj.version>3.27.4</assertj.version>
         <resteasy.version>6.2.12.Final</resteasy.version>
-        <jax-rs-logging.version>2.4.1</jax-rs-logging.version>
+        <jax-rs-logging.version>2.5</jax-rs-logging.version>
         <jakarta-ee.version>11.0.0</jakarta-ee.version>
         <slf4j.version>2.0.17</slf4j.version>
         <yasson.version>3.0.4</yasson.version>
         <jersey.version>3.1.11</jersey.version>
         <smallrye-config.version>3.13.4</smallrye-config.version>
         <logback.version>1.5.18</logback.version>
+        <jboss-logging.version>3.6.1.Final</jboss-logging.version>
     </properties>
 
     <scm>
@@ -37,16 +38,6 @@
         <url>https://github.com/t1/yaml-message-body-reader-writer.git</url>
         <tag>HEAD</tag>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
     <developers>
         <developer>
             <id>t1</id>
@@ -110,13 +101,14 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.7.0</version>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.8.0</version>
+                <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>published</waitUntil>
                 </configuration>
             </plugin>
         </plugins>

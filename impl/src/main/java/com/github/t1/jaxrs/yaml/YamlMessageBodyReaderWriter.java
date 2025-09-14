@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.MultivaluedMap;
 import jakarta.ws.rs.ext.MessageBodyReader;
 import jakarta.ws.rs.ext.MessageBodyWriter;
 import jakarta.ws.rs.ext.Provider;
+import org.eclipse.microprofile.config.ConfigProvider;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.introspector.Property;
@@ -46,7 +47,7 @@ public class YamlMessageBodyReaderWriter<T> implements MessageBodyReader<T>, Mes
 
     @Override
     public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
-        return true;
+        return ConfigProvider.getConfig().getOptionalValue("yaml.unsafe-read.enabled", Boolean.class).orElse(false);
     }
 
     @Override
