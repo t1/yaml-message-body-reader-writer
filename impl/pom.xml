@@ -12,6 +12,7 @@
     </parent>
 
     <artifactId>yaml-message-body-reader-writer</artifactId>
+    <name>YAML MessageBodyReader/Writer</name>
 
     <dependencies>
         <dependency>
@@ -117,6 +118,10 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

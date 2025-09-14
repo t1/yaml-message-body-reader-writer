@@ -13,6 +13,7 @@
 
     <artifactId>yaml-message-body-reader-writer-test</artifactId>
     <packaging>war</packaging>
+    <name>YAML MessageBodyReader/Writer (Test)</name>
 
     <dependencies>
         <dependency>
