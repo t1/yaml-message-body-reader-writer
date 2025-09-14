@@ -30,6 +30,12 @@
         <jboss-logging.version>3.6.1.Final</jboss-logging.version>
     </properties>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/t1/yaml-message-body-reader-writer.git</developerConnection>
+        <url>https://github.com/t1/yaml-message-body-reader-writer.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <modules>
         <module>impl</module>
         <module>test</module>
