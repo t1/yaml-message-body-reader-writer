@@ -13,6 +13,19 @@
         <url>https://github.com/t1/yaml-message-body-reader-writer.git</url>
         <tag>HEAD</tag>
     </scm>
+    <developers>
+        <developer>
+            <id>t1</id>
+            <name>Rüdiger zu Dohna</name>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
