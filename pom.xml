@@ -39,7 +39,7 @@
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
 
-        <lombok.version>1.18.40</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <jax-rs.version>4.0.0</jax-rs.version>
         <snakeyaml.version>2.5</snakeyaml.version>
         <junit.version>5.13.4</junit.version>
