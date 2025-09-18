@@ -43,7 +43,7 @@
         <jax-rs.version>4.0.0</jax-rs.version>
         <snakeyaml.version>2.5</snakeyaml.version>
         <junit.version>5.13.4</junit.version>
-        <assertj.version>3.27.4</assertj.version>
+        <assertj.version>3.27.5</assertj.version>
         <resteasy.version>6.2.12.Final</resteasy.version>
         <jax-rs-logging.version>2.5</jax-rs-logging.version>
         <jakarta-ee.version>11.0.0</jakarta-ee.version>
