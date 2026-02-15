@@ -52,7 +52,7 @@
         <jersey.version>3.1.11</jersey.version>
         <smallrye-config.version>3.15.0</smallrye-config.version>
         <logback.version>1.5.18</logback.version>
-        <jboss-logging.version>3.6.1.Final</jboss-logging.version>
+        <jboss-logging.version>3.6.2.Final</jboss-logging.version>
     </properties>
 
     <modules>
