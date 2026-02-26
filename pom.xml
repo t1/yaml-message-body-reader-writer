@@ -41,7 +41,7 @@
 
         <lombok.version>1.18.42</lombok.version>
         <jax-rs.version>4.0.0</jax-rs.version>
-        <snakeyaml.version>2.5</snakeyaml.version>
+        <snakeyaml.version>2.6</snakeyaml.version>
         <junit.version>6.0.3</junit.version>
         <assertj.version>3.27.7</assertj.version>
         <resteasy.version>7.0.1.Final</resteasy.version>
