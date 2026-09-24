@@ -32,8 +32,8 @@
             <scope>provided<!--if you don't have this, it's just an annotation--></scope>
         </dependency>
         <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <groupId>jakarta.cdi</groupId>
+            <artifactId>jakarta.cdi-api</artifactId>
             <version>5.0.0</version>
             <scope>provided<!--if you don't have this, it's just an annotation--></scope>
         </dependency>
